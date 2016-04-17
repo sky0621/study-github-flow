@@ -15,6 +15,14 @@ class Buzz
 
 end
 
+class GitHub
+
+	def show
+		p "GitHub!"
+	end
+
+end
+
 class FizzBuzz
 
 	def show
@@ -23,7 +31,7 @@ class FizzBuzz
 
 end
 
-class FizzBuzzExecuter
+class FizzBuzzExecutor
 
 	def initialize(no)
 		@no = no
@@ -37,6 +45,8 @@ class FizzBuzzExecuter
 			Fizz.new.show
 		elsif @no % 5 == 0
 			Buzz.new.show
+		elsif @no % 7 == 0
+			GitHub.new.show
 		else
 			p @no
 		end
@@ -46,6 +56,6 @@ end
 
 no = ARGV[0].to_i
 
-fb = FizzBuzzExecuter.new(no)
+fb = FizzBuzzExecutor.new(no)
 fb.show()
 
